@@ -2,6 +2,7 @@ import Home from "@/pages/Home.vue"
 import Category from "@/pages/Category.vue"
 import Cart from "@/pages/Cart.vue"
 import Mine from "@/pages/Mine.vue"
+import CategoryList from "@/pages/CategoryList.vue"
 import Tabbar from "@/components/Tabbar.vue"
 import AppHeader from "@/components/AppHeader.vue"
 
@@ -35,7 +36,16 @@ const routes = [
     	meta: {
     		navTitle: "产品",
     		isNav: true
-    	}
+    	},
+        children:[
+          {
+            path:":categoryId",
+            name:"categorylist",
+            components:{
+                default:CategoryList
+            }
+          }
+        ]
     }, {
     	path: "/cart",
     	name: "cart",
@@ -45,7 +55,7 @@ const routes = [
     		tabbar: Tabbar
     	},
     	meta: {
-    		navTitle: "和风软点",
+    		navTitle: "购物车",
     		isNav: true
     	}
     }, {

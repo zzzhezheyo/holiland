@@ -3,7 +3,7 @@ import { Indicator, Toast } from 'mint-ui';
 
 // 创建一个 axios 实例
 const ajax = axios.create({
-	baseURL:'http://148.70.25.70:8080/app/mock/17'
+	baseURL:'http://rap2api.taobao.org/app/mock/126590'
 })
 
 // 添加请求拦截器
@@ -33,7 +33,13 @@ axios.interceptors.response.use(res=>{
 
 //请求首页轮播图
 export const getHomeSwiper=()=>{
-	return ajax.get('/api/swiperimgs')
+	return ajax.get('/carousel')
 }
 
-
+export const getCategoryList=()=>{
+    return ajax.get('/api/categorylist')
+}
+//请求商品列表
+export const getProductList=(categoryId)=>{
+    return ajax.get('/api/ProductList?categoryId='+categoryId)
+}

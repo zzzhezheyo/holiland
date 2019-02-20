@@ -46,9 +46,16 @@
 </script>
 
 <style scoped lang="scss">
-	body{
-		width:414px;
-	}
+body{
+	width:100%;
+	height:100%;
+	display:flex;
+	flex-direction: column;
+}
+.home{
+	flex-grow:1;
+
+}
 	.home-swiper {
 		width: 100%;
 		height: 180px;
@@ -72,19 +79,20 @@
 		}
 	}
 	.cake{
-		width:414px;
-		height:530px;
+		width:100%;
 		img{
-			width:414px;
+			width:100%;
 		}
 		ul{
-			width:414px;
-			//display:flex;
-			//justify-content: space-between;
-			//flex-direction: row;
+			width:100%;
+			height:8em;
+			display:flex;
+			justify-content: space-between;
+			flex-direction: row;
+			flex-grow:1;
+			overflow:scroll;
 			img{
-				width:138px;
-				float:left;
+				width:100%;
 			}
 		}
 	}
