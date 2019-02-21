@@ -51,7 +51,7 @@
 		},
 		data() {
 			return {
-				selected: "home",
+				selected: this.$route.name,
 				navs: routes.filter(curr => curr.meta.isNav),
 				flag1: false,
 	            flag2: true,

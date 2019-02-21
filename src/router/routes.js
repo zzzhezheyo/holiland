@@ -1,10 +1,20 @@
-import Home from "@/pages/Home.vue"
-import Category from "@/pages/Category.vue"
-import Cart from "@/pages/Cart.vue"
-import Mine from "@/pages/Mine.vue"
-import CategoryList from "@/pages/CategoryList.vue"
+// import Home from "@/pages/Home.vue"
+// import Category from "@/pages/Category.vue"
+// import Cart from "@/pages/Cart.vue"
+// import Mine from "@/pages/Mine.vue"
+// import CategoryList from "@/pages/CategoryList.vue"
 import Tabbar from "@/components/Tabbar.vue"
 import AppHeader from "@/components/AppHeader.vue"
+
+//路由懒加载，通常我们将页面级的实现分片打包
+const Home=()=> import("@/pages/Home.vue")
+const Category=()=> import("@/pages/Category.vue")
+const Cart=()=> import("@/pages/Cart.vue")
+const Mine=()=> import("@/pages/Mine.vue")
+const CategoryList=()=> import("@/pages/CategoryList.vue")
+// const AppHeader=()=> import("@/components/AppHeader.vue")
+// const Tabbar=()=> import("@/components/Tabbar.vue")
+const Detail=()=> import("@/pages/Detail.vue")
 
 const routes = [
     {
@@ -69,6 +79,17 @@ const routes = [
     		navTitle: "帮助中心",
     		isNav: true
     	}
+    },
+    {
+        path:"/detail/:id",
+        name:"/detail",
+        components:{
+            header:AppHeader,
+            main:Detail
+        },
+        meta:{
+            isNav: false
+        }
     }
   ];
 
