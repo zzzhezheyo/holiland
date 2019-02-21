@@ -69,14 +69,14 @@ const routes = [
     		isNav: true
     	}
     }, {
-    	path: "/help",
-    	name: "help",
+    	path: "/mine",
+    	name: "mine",
     	components: {
     		main: Mine,
     		tabbar: Tabbar
     	},
     	meta: {
-    		navTitle: "帮助中心",
+    		navTitle: "个人中心",
     		isNav: true
     	}
     },
@@ -84,7 +84,7 @@ const routes = [
         path:"/detail/:id",
         name:"/detail",
         components:{
-            header:AppHeader,
+            tabbar: Tabbar,
             main:Detail
         },
         meta:{

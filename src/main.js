@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
+
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 
@@ -19,10 +21,10 @@ router.beforeEach((to, from, next) => {
 	console.log(to, from)
 	if (to.name === "mine") {
 		// 判断是否登录
-		const r = Math.random()
-		console.log(r)
-		if (r > 0.5) // 未登录
-			next("/home")
+		// const r = Math.random()
+		// console.log(r)
+		// if (r > 0.5) // 未登录
+		// 	next("/home")
 	}
 	next()
 })
@@ -30,7 +32,8 @@ router.beforeEach((to, from, next) => {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
+  router,//路由
+  store,//Vuex
   components: { App },
   template: '<App/>'
 })

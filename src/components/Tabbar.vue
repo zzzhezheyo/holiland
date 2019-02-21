@@ -67,8 +67,6 @@
 				if(newValue=="category"){
 					// alert(newValue)
 					// this.$router.push({name: newValue});
-				}else if(newValue=="help"){
-					alert(newValue)
 				}
 				else{
 					this.$router.push({name: newValue});

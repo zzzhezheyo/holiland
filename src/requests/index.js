@@ -35,6 +35,10 @@ axios.interceptors.response.use(res=>{
 export const getHomeSwiper=()=>{
 	return ajax.get('/carousel')
 }
+//详情页轮播图
+export const getDetailSwiper=()=>{
+    return ajax.get('/carousel')
+}
 
 export const getCategoryList=()=>{
     return ajax.get('/api/categorylist')

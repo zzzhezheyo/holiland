@@ -8,12 +8,16 @@
 			<div class="img"><img :src="prod.img" alt=""></div>
 			<div class="title">{{prod.title}}</div>
 			<div class="price">{{prod.price}}</div>
-			<mt-button type="primary" @click.native.stop="addToCart(prod.id)">+</mt-button>
+			<mt-button type="primary" @click.native.stop="addCartItem(prod)">+</mt-button>
 		</div>
 	</div>
 </template>
 
 <script>
+	import{
+		mapMutations
+	}from 'vuex'
+
 	//缓存对象，用于缓存查询到的列表数据ProductList
 	//key:使用ctegoryId
 	//value：使用根据caategoryid查询到的值
@@ -28,6 +32,13 @@
 			}
 		},
 		methods:{
+			...mapMutations(['addCartItem']),
+			// ...mapMutations(['addDetailItem']),
+
+			// detail(categoryId){
+			// 	console.log(res.data.res_body.list.id)
+			// }
+
 			//查询数据
 			getCategoryListData(categoryId){
 				//判断是否在缓存中保存对应的数据
@@ -37,7 +48,7 @@
 					//缓存中不存在发起ajax请求
 					this.$http.getProductList(categoryId)
 						.then(res=>{
-							console.log(res.data.res_body);
+							// console.log(res.data.res_body);
 							this.productList=res.data.res_body.list;
 							//请求到的数据加入缓存
 							cache[categoryId]=res.data.res_body.list;
