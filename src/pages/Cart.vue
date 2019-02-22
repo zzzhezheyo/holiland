@@ -25,7 +25,6 @@
 		mapGetters
 	}from"vuex"
 	import CartItem from "@/components/CartItem.vue"
-
 	export default {
 		name: "Cart",
 		components:{
@@ -33,6 +32,9 @@
 		},
 		computed:{
 			...mapState(['cart'])
+		},
+		created(){
+			// console.log(this.$route);
 		}
 		// computed:{
 		// 	...mapState(['count']),

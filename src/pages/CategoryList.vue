@@ -2,14 +2,19 @@
 	<div class="category-list">
 		商品列表页面
 		{{$route.params.categoryId}}
-		<div class="product"
-			v-for="prod in productList"
-			:key="prod.id" @click="toDetail(prod.id)">
-			<div class="img"><img :src="prod.img" alt=""></div>
-			<div class="title">{{prod.title}}</div>
-			<div class="price">{{prod.price}}</div>
-			<mt-button type="primary" @click.native.stop="addCartItem(prod)">+</mt-button>
-		</div>
+		<ul class="list">
+			<li>
+				<div class="product"
+					v-for="prod in productList"
+					:key="prod.id" @click="toDetail(prod.id)">
+					<div class="img"><img :src="prod.img" alt=""></div>
+					<div class="title">{{prod.title}}</div>
+					<div class="price">{{prod.price}}</div>
+					<mt-button type="primary" id="add-list" @click.native.stop="addCartItem(prod)">+</mt-button>
+				</div>
+			</li>
+		</ul>
+		
 	</div>
 </template>
 
@@ -58,6 +63,7 @@
 			//查看商品详情
 			toDetail(id){
 				this.$router.push("/detail/"+id)
+				// console.log(id);
 			},
 			addToCart(id){
 				console.log("add");
@@ -89,5 +95,17 @@
 </script>
 
 <style>
-	
+	.product{
+		width: 42%;
+	    margin: 3%;
+	    border-radius:3px;
+	    border: 1px solid #eaeaea;
+	    float: left;
+	    #add-list{
+	    	margin-left: 75%;
+		    width: 32px;
+		    border-radius: 50%;
+		    height: 30px;
+	    }
+	}
 </style>

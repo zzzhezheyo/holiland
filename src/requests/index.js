@@ -33,11 +33,11 @@ axios.interceptors.response.use(res=>{
 
 //请求首页轮播图
 export const getHomeSwiper=()=>{
-	return ajax.get('/carousel')
+	return ajax.get('/api/Carousel')
 }
 //详情页轮播图
 export const getDetailSwiper=()=>{
-    return ajax.get('/carousel')
+    return ajax.get('/api/Carousel')
 }
 
 export const getCategoryList=()=>{
@@ -46,4 +46,8 @@ export const getCategoryList=()=>{
 //请求商品列表
 export const getProductList=(categoryId)=>{
     return ajax.get('/api/ProductList?categoryId='+categoryId)
+}
+
+export const getDetailList=(Id)=>{
+    return ajax.get('/api/detail')
 }
