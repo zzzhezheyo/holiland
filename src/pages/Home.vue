@@ -15,8 +15,8 @@
 		</div>
 
 		<div class="cake">
-			<img src="/static/cake1.jpg" alt=""><a href="javascript:;"></a></img>
-			<img src="/static/cake2.jpg" alt=""><a href="javascript:;"></a></img>
+			<img src="/static/cake1.jpg" alt=""><a href="#"></a></img>
+			<img src="/static/cake2.jpg" alt=""><a href="#"></a></img>
 			<ul>
 				<li><a href="javascript:;"><img src="/static/cake3.jpg" alt=""></a></li>
 				<li><a href="javascript:;"><img src="/static/cake4.jpg" alt=""></a></li>

@@ -12,15 +12,15 @@ axios.interceptors.request.use(config=> {
     Indicator.open({
 	  text: 'Loading...',
 	  spinnerType: 'fading-circle'
-	});
-    return config;
+	})
+    return config
   });
 
 // 添加响应拦截器
 axios.interceptors.response.use(res=>{
     // 对响应数据做点什么
     Indicator.close();
-    if(res.data.res_code !==1)
+    if(res.data.res_code ===1)
     	return res.data.res_body
     else
     	Toast({

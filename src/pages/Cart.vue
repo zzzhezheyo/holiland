@@ -5,6 +5,10 @@
 			:key="item.id"
 			v-bind="item"
 		></CartItem>
+
+		<div class="info">
+			商品数量：{{totalAmount}} 总价格：{{totalPrice}}
+		</div>	
 	<!-- 这是购物车页面
 	<br>
 	计数数量：{{myCount}}
@@ -31,7 +35,8 @@
 			CartItem
 		},
 		computed:{
-			...mapState(['cart'])
+			...mapState(['cart']),
+			...mapGetters(['totalAmount','totalPrice'])
 		},
 		created(){
 			// console.log(this.$route);

@@ -5,6 +5,7 @@
 // import CategoryList from "@/pages/CategoryList.vue"
 import Tabbar from "@/components/Tabbar.vue"
 import AppHeader from "@/components/AppHeader.vue"
+import BackHeader from "@/components/BackHeader.vue"
 
 //路由懒加载，通常我们将页面级的实现分片打包
 const Home=()=> import("@/pages/Home.vue")
@@ -60,7 +61,7 @@ const routes = [
     	path: "/cart",
     	name: "cart",
     	components: {
-            header: AppHeader,
+            header: BackHeader,
     		main: Cart,
     		tabbar: Tabbar
     	},
@@ -85,6 +86,7 @@ const routes = [
         name:"/detail",
         components:{
             tabbar: Tabbar,
+            header:BackHeader,
             main:Detail
         },
         meta:{

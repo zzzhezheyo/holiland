@@ -10,11 +10,11 @@
 			{{price}}
 		</div>
 		<div class="item-amount">
-			<mt-button type="danger">-</mt-button>
+			<mt-button type="danger" :disabled="amount<=1" @click="minusAmount(id)">-</mt-button>
 			{{amount}}
-			<mt-button type="danger">+</mt-button>
+			<mt-button type="danger" @click="addAmount(id)">+</mt-button>
 		</div>
-		<mt-button type="danger">删除</mt-button>
+		<mt-button type="danger" @click="deleteAmount(id)">删除</mt-button>
 	</div>
 </template>
 
@@ -22,7 +22,13 @@
 	import {mapMutations} from 'vuex'
 	export default{
 		name:'CartItem',
-		props:['img','title','price','amount','id']
+		props:['img','title','price','amount','id'],
+		created(){
+			console.log(this.amount)
+		},
+		methods:{
+			...mapMutations(['addAmount','minusAmount','deleteAmount'])
+		}
 	}
 </script>
 
