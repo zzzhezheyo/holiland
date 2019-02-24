@@ -71,6 +71,10 @@ export default{
 				return true
 			}
 		})
+	},
+
+	modifyLoginState(state,isLogin){
+		state.isLogin=isLogin
 	}
 
 }

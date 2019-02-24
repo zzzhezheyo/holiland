@@ -19,14 +19,25 @@ Vue.config.productionTip = false
 // 全局导航守卫
 router.beforeEach((to, from, next) => {
 	console.log(to, from)
-	if (to.name === "mine") {
+	if(to.meta.isAuthCheck){
+		//判断用户是否登录
+		if(store.state.isLogin){//已登录
+			next()
+		}else{
+			next("/login")
+		}
+		
+	}else{
+		next()
+	}
+	// if (to.name === "mine") {
 		// 判断是否登录
 		// const r = Math.random()
 		// console.log(r)
 		// if (r > 0.5) // 未登录
 		// 	next("/home")
-	}
-	next()
+	// }
+	
 })
 
 /* eslint-disable no-new */

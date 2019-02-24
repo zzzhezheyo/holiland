@@ -5,4 +5,6 @@ export default{
 			// {id:2,title:"bcd",price:300,img:"xxx.jpg",amount:1},
 			// {id:3,title:"def",price:400,img:"xxx.jpg",amount:1}
 		],
+	//标识用户是否登录
+	isLogin:false
 }

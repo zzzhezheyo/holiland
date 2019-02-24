@@ -16,6 +16,7 @@ const CategoryList=()=> import("@/pages/CategoryList.vue")
 // const AppHeader=()=> import("@/components/AppHeader.vue")
 // const Tabbar=()=> import("@/components/Tabbar.vue")
 const Detail=()=> import("@/pages/Detail.vue")
+const Login=()=> import("@/pages/Login.vue")
 
 const routes = [
     {
@@ -68,6 +69,7 @@ const routes = [
     	meta: {
     		navTitle: "购物车",
     		isNav: true
+            // isAuthCheck:true//需要权限才能查看
     	}
     }, {
     	path: "/mine",
@@ -78,7 +80,8 @@ const routes = [
     	},
     	meta: {
     		navTitle: "个人中心",
-    		isNav: true
+    		isNav: true,
+            isAuthCheck:true
     	}
     },
     {
@@ -91,6 +94,16 @@ const routes = [
         },
         meta:{
             isNav: false
+        }
+    },{
+        path:"/login",
+        name:"login",
+        components:{
+            main:Login,
+            tabbar: Tabbar
+        },
+        meta:{
+            isNav:false
         }
     }
   ];
